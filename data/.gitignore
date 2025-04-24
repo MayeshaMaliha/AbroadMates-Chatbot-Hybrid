@@ -1,0 +1,57 @@
+# Virtual environment
+venv/
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# VS Code / Cursor settings
+.vscode/
+.cursor/
+
+# Mac system files
+.DS_Store
+
+# Logs and runtime
+*.log
+*.pid
+*.seed
+*.sqlite3
+*.db
+*.swp
+
+# Rasa cache and model files
+.rasa/
+models/
+*.json
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# System backups
+*.bak
+*.tmp
+*.old
+*.orig
+*.save
+
+# Pip tools
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Node (in case of frontend)
+node_modules/
+
+# Docker
+*.tar
+*.img
+*.container
+
+# Gemini secrets (if you use one)
+google_api_key.txt
