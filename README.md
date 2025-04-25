@@ -24,35 +24,35 @@ Abroadmates AI is a smart chatbot that helps students get answers about studying
 - Custom actions using LLMs (Gemini, LLaMA)
 - Simple web frontend interface
 
----
-Setup and Run Instructions
-1. Create and Activate a Virtual Environment
+## Setup and Run Instructions
+### 1. Create and Activate a Virtual Environment
 
 python3 -m venv rasa_env
 source rasa_env/bin/activate
-2. Install Dependencies
+### 2. Install Dependencies
 
 Make sure you have all required packages installed:
 
 pip install -r requirements.txt
 Compatible versions:
 
-rasa==3.6.2
-pyyaml==5.4.1
-numpy==1.23.5
-scikit-learn==1.1.3
-tensorflow-macos==2.12.0
-python-dotenv==1.1.0
-3. Train the Rasa Model
+rasa==3.6.2  
+pyyaml==5.4.1  
+numpy==1.23.5  
+scikit-learn==1.1.3  
+tensorflow-macos==2.12.0  
+python-dotenv==1.1.0  
+### 3. Train the Rasa Model
 
 rasa train
-4. Start the Chatbot in Shell Mode
+### 4. Start the Chatbot in Shell Mode
 
 rasa shell
-5. Start the Action Server
+#### 5. Start the Action Server
 
-Open a new terminal window, activate your virtual environment again, then:
+Open a new terminal window, activate your virtual environment again:
 
+source rasa_env/bin/activate
 rasa run actions
 
 ## Project Structure
