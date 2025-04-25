@@ -1,46 +1,79 @@
-# AbroadMates-Chatbot
-Abroadmates AI is a smart chatbot that helps students get answers about studying abroad—covering visas, tuition, scholarships, and more. Built with Rasa, it’s your AI-powered study abroad assistant with plans for avatar chat, document uploads, and personalized advice.
+# AbroadMates AI Chatbot
 
+Abroadmates AI is a smart chatbot that helps students get answers about studying abroad—covering visas, tuition, scholarships, accommodation, part-time work, and more. Built with Rasa, it’s your AI-powered study abroad assistant with future plans for avatar chat, document uploads, and personalized student support.
 
-# Abroadmates AI Chatbot
-
-Abroadmates AI is an intelligent chatbot built with **Rasa** that helps students navigate their study abroad journey. From visa requirements to university selection, the bot answers questions and supports students in making informed decisions.
+---
 
 ## Features
 
-- Built with **Rasa** for natural language understanding
-- Answers queries on:
-  - Visa requirements
-  - Accommodation
-  - Universities
-  - Tuition fees
-  - Scholarships
-  - Part-time jobs
-  - Internships
-  - Campus life
-  - Health insurance
-  - And more!
-- Integrates with a **custom web frontend**
-- Deployed via subdomain: `chatbot.abroadmates.com` (Planned)
-- Future plans:
-  - Avatar-based interactive chat experience
-  - Document upload & organization
-  - Personalized student assistant
+- Built with Rasa 3.6.2
+- Understands over 15+ student-related topics:
+  - Visa requirements  
+  - Accommodation  
+  - University selection  
+  - Tuition fees  
+  - Scholarships  
+  - Language requirements  
+  - Campus life  
+  - Part-time jobs  
+  - Internships  
+  - Health insurance  
+  - Professors and student life
+- Future deployment at chatbot.abroadmates.com
+- Integrated with Gemini fallback for open-ended queries
+- Custom actions using LLMs (Gemini, LLaMA)
+- Simple web frontend interface
+
+## Setup and Run Instructions
+### 1. Create and Activate a Virtual Environment
+
+python3 -m venv rasa_env
+source rasa_env/bin/activate
+### 2. Install Dependencies
+
+Make sure you have all required packages installed:
+
+pip install -r requirements.txt
+Compatible versions:
+
+rasa==3.6.2  
+pyyaml==5.4.1  
+numpy==1.23.5  
+scikit-learn==1.1.3  
+tensorflow-macos==2.12.0  
+python-dotenv==1.1.0  
+### 3. Train the Rasa Model
+
+rasa train
+### 4. Start the Chatbot in Shell Mode
+
+rasa shell
+#### 5. Start the Action Server
+
+Open a new terminal window, activate your virtual environment again:
+
+source rasa_env/bin/activate
+rasa run actions
 
 ## Project Structure
 
 ```bash
-Abroadmates_Chatbot/
-├── actions/                  # Custom Python actions (e.g., for LLaMA or web search)
-├── data/                     # NLU data and stories
+AbroadMates-Chatbot-Hybrid/
+├── actions/                  # Custom Python actions (e.g., Gemini fallback, LLaMA)
+│   └── actions.py
+├── data/                     # NLU training data and rules
 │   ├── nlu.yml
 │   └── rules.yml
-├── domain.yml                # Intents, responses, and actions
-├── config.yml                # Rasa pipeline and policies
-├── credentials.yml           # Channels and credentials
-├── endpoints.yml             # Webhook endpoints
-├── index.html                # Simple HTML frontend for chatbot UI
-├── static/                   # (Optional) Any assets like logo, stylesheets
-├── server.py                 # (Optional) Python server to host the chatbot frontend
-├── README.md                 # Project documentation
-└── requirements.txt          # Python dependencies
+├── models/                   # Trained Rasa models (.tar.gz)
+├── static/                   # Static files (e.g., images, logo)
+├── templates/                # (Optional) Frontend templates if used
+├── .env                      # Environment variables (e.g., Gemini key)
+├── .gitignore                # Files/folders to ignore in version control
+├── config.yml                # Rasa pipeline and policy configuration
+├── credentials.yml           # Rasa channel credentials
+├── domain.yml                # Bot domain: intents, responses, actions
+├── endpoints.yml             # Webhook endpoints (e.g., action server)
+├── index.html                # Simple chatbot frontend (optional)
+├── requirements.txt          # Python dependencies
+├── server.py                 # Optional: host chatbot on web
+└── README.md                 # You're here 
