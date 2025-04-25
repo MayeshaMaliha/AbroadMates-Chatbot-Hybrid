@@ -30,8 +30,5 @@ policies:
   - name: TEDPolicy
     max_history: 5
     epochs: 100
-  - name: FallbackPolicy
-    nlu_threshold: 0.3
-    fallback_action_name: "action_ask_gemini"
 
 assistant_id: 20250421-232840-gold-veal
