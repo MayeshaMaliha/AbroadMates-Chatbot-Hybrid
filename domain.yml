@@ -119,6 +119,14 @@ actions:
   - utter_ask_campus_facilities
   - action_ask_gemini
   - action_default_fallback
+  - action_gemini_fallback
+
+
+policies:
+  - name: FallbackPolicy
+    nlu_threshold: 0.2
+    core_threshold: 0.3
+    fallback_action_name: "action_gemini_fallback"
 
 
 session_config:
